@@ -55,7 +55,7 @@ geraRelatorioScanner(){
     echo "" > "$1"
 
     echo "Iniciando scanner na faixa $2 . . ."
-    nmap -sn "$rede" > tmp_ips.txt
+    nmap -sn "$2" > tmp_ips.txt
 
     echo "Dispositivos ativos na rede: " >> "$1"
     grep "Nmap scan report for " tmp_ips.txt | awk '{print $5}' >> "$1"
