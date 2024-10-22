@@ -1,12 +1,14 @@
 # So pra ficar bonitin
 banner(){
-    echo " N E T W O R K - S C A N N E R "
+    echo "-----------------------------------"
+    echo "   N E T W O R K - S C A N N E R   "
+    echo "-----------------------------------"
 }
 # separa a funcao que gera o relatorio de scaneamento de rede
 # futuramente implementarei outras funcoes nesse codigo
 geraRelatorio(){
     echo "Relatorio de Rede - $(date)" > "$1"
-    echo "----------------------------------" > "$1"
+    echo "-----------------------------------" > "$1"
     echo "" > "$1"
 
     echo "Iniciando scanner na faixa $2 . . ."
@@ -33,6 +35,7 @@ main(){
     banner
     read -p "Digite o ip da rede: " rede
     relatorio="Relatorio_Rede$(date +%F_%T).txt"
+    echo "Lembrando que voce precisa ter o nmap em sua maquina ;)"
     geraRelatorio $relatorio $rede
     echo "Scanner finalizado e relatorio gerado"
 }
